@@ -1,9 +1,40 @@
 # Homelab-Server
-Kherbin's personal homeserver using nextcloud
+**Kherbin's** personal homeserver using nextcloud because why not?
+
+
 ## Personal Homelab server 
 - Nextcloud web app
 - MariaDB database
 - Works with Android, Laptop, PC using Tailscale
+- Wake-on-LAN support
+- Own Sata Storage
+- For reproduction
+
+## Prerequisites 
+- Main Server (PC or Laptop)
+- Operating System: Arch Linux
+- Extra Storage for Cloud
+- Wake-on-LAN supported Motherboard (Optional)
+> I personally recommend getting a Raspberry Pi for remote SSH Wake-on-Lan or any always on device. Even an old laptop could work :>> 
+
+## Why?
+With all the microservices they've been feeding us lately from 
+- Limited Cloud Storage
+- A.I. Bloat
+- Spyware
+  
+I wanted to host my own Server that I can run locally. Every software I utilized is free and opensource. 
+
+## Repo Structure
+``` bash
+├── scripts/
+│├── install.sh
+│├── start.sh
+├── .gitignore
+├── README.md
+├── docker-compose.yaml
+
+```
 
 ## Setup Instructions
 
@@ -57,4 +88,17 @@ volumes:
   db_data:
 
 ```
+### 3. Install Scripts
+``` bash
+bash scripts/install.sh
+```
+- Installs Docker, Docker Compose, and Tailscale
+- Makes data folders
+### 4. Start The Server
+``` bash
+bash scripts/start.sh
+```
+### 5. Setup Tailscale on Android Devices
+1. **Install Tailscale on Playstore**
 
+> TO BE CONTINUED
