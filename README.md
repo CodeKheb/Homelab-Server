@@ -1,6 +1,9 @@
 # Homelab-Server
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 <<<<<<< HEAD
 Kherbin's personal homeserver using nextcloud
 ## Personal Homelab server 
@@ -62,5 +65,8 @@ volumes:
 ```
 =======
 >>>>>>> 8aa79eb (Added install scripts)
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
