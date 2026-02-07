@@ -98,7 +98,44 @@ bash scripts/install.sh
 ``` bash
 bash scripts/start.sh
 ```
-### 5. Setup Tailscale on Android Devices
+### 5. Setup Tailscale on Your devices
+#### 1. Setup Tailscale on your Main Server
+Enable Tailscale
+``` bash
+sudo systemctl enabled --now tailscaled
+```
+Authenticate and Login
+``` bash
+sudo tailscale up
+```
+Check IP 
+``` bash
+tailscale ip -4
+```
+> Copy this IP for this will be important for nextcloud later
+
+---
+> If you haven't installed tailscale with the script
+Arch Linux
+``` bash
+sudo pacman -S tailscale
+```
+You need to use ``` curl ``` for most other Linux Distros
+
+Tailscale is not available in most default repos
+
+
+## Install Tailscale on Playstore
+
 1. **Install Tailscale on Playstore**
+2. **Login with your preferred account**
+> I personally used a google account
+3. **Login wirh same account used in your Main Server**
+> This should automatically connect you to your own VPN
+You should see:
+``` bash
+├── Main Server Name
+├── Android Phone Name
+```
 
 > TO BE CONTINUED
