@@ -7,7 +7,7 @@
 - MariaDB database
 - Works with Android, Laptop, PC using Tailscale
 - Wake-on-LAN support
-- Own Sata Storage
+- Own Data Storage
 - For reproduction
 
 ## Prerequisites 
@@ -114,28 +114,46 @@ tailscale ip -4
 ```
 > Copy this IP for this will be important for nextcloud later
 
----
+
+### 2. Set-up other PC or laptop 
+To backup your other files from your other Computers, you can install tailscale as well
+
 > If you haven't installed tailscale with the script
+
 Arch Linux
 ``` bash
 sudo pacman -S tailscale
 ```
 You need to use ``` curl ``` for most other Linux Distros
 
-Tailscale is not available in most default repos
+> Tailscale is not available in most default repos
+
+Enable Tailscale
+``` bash
+sudo systemctl enabled --now tailscaled
+```
+Authenticate and Login
+``` bash
+sudo tailscale up
+```
+
+## You should be able to see every devices connected including your Main Server by visiting: [Tailscale](https://login.tailscale.com/admin/machines)
 
 
-## Install Tailscale on Playstore
+
+
+## 2. Install Tailscale on Playstore
 
 1. **Install Tailscale on Playstore**
 2. **Login with your preferred account**
-> I personally used a google account
-3. **Login wirh same account used in your Main Server**
+> I personally use a google account
+3. **Login with same account used in your Main Server**
 > This should automatically connect you to your own VPN
 You should see:
 ``` bash
 ├── Main Server Name
 ├── Android Phone Name
 ```
+
 
 > TO BE CONTINUED
