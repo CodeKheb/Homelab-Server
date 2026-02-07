@@ -98,8 +98,9 @@ bash scripts/install.sh
 ``` bash
 bash scripts/start.sh
 ```
-### 5. Setup Tailscale on Your devices
-#### 1. Setup Tailscale on your Main Server
+## Setup Tailscale on Your devices
+### 5. Setup Tailscale on your Main Server
+  
 Enable Tailscale
 ``` bash
 sudo systemctl enabled --now tailscaled
@@ -115,7 +116,8 @@ tailscale ip -4
 > Copy this IP for this will be important for nextcloud later
 
 
-### 2. Set-up other PC or laptop 
+### 6. Set-up other PC or laptop
+
 To backup your other files from your other Computers, you can install tailscale as well
 
 > If you haven't installed tailscale with the script
@@ -137,17 +139,14 @@ Authenticate and Login
 sudo tailscale up
 ```
 
-## You should be able to see every devices connected including your Main Server by visiting: [Tailscale](https://login.tailscale.com/admin/machines)
+ > ## You should be able to see every devices connected including your Main Server by visiting: [Tailscale](https://login.tailscale.com/admin/machines)
 
+### 7. Install Tailscale on Playstore
 
-
-
-## 2. Install Tailscale on Playstore
-
-1. **Install Tailscale on Playstore**
-2. **Login with your preferred account**
+1. Install Tailscale on Playstore
+2. Login with your preferred account
 > I personally use a google account
-3. **Login with same account used in your Main Server**
+3. Login with same account used in your Main Server
 > This should automatically connect you to your own VPN
 You should see:
 ``` bash
