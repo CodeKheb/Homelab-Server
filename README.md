@@ -61,10 +61,10 @@ services:
     restart: always
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
     environment:
-      MYSQL_ROOT_PASSWORD: rootpass123   # change this to your strong password
+      MYSQL_ROOT_PASSWORD: rootpass123   # change this for access to root    
       MYSQL_DATABASE: nextcloud
-      MYSQL_USER: nextclouduser
-      MYSQL_PASSWORD: ncpass123          # change this to your strong password
+      MYSQL_USER: yourUsername123             # change your SQL username 
+      MYSQL_PASSWORD: whateverPassword123          # change this to your strong password
     volumes:
       - db_data:/var/lib/mysql
 
@@ -72,15 +72,15 @@ services:
     image: nextcloud
     container_name: nextcloud-app
     ports:
-      - 8081:80               # change this to whatever local port you want
+      - 8080:80               # change this to whatever local port you want e.g 8090:80 -> this will be used for access to nextcloud. Tailwind IP + local port
     restart: always
     links:
       - db
     environment:
       MYSQL_HOST: db
       MYSQL_DATABASE: nextcloud
-      MYSQL_USER: nextclouduser
-      MYSQL_PASSWORD: ncpass123 # change this to your strong password
+      MYSQL_USER: yourUsername123      # change your username 
+      MYSQL_PASSWORD: whateverPassword123 # change this to your strong password
     volumes:
       - ./data:/var/www/html
 
