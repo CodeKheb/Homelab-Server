@@ -1,1 +1,1 @@
-# Josh mag cocommit ako sa ssh
+sudo systemctl restart tailscaled
