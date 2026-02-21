@@ -99,7 +99,7 @@ bash scripts/install.sh
 bash scripts/start.sh
 ```
 ## Setup Tailscale on Your devices
-### 5. Setup Tailscale on your Main Server
+### 1. Setup Tailscale on your Main Server
   
 Enable Tailscale
 ``` bash
@@ -116,7 +116,7 @@ tailscale ip -4
 > Copy this IP for this will be important for nextcloud later
 
 
-### 6. Set-up other PC or laptop
+### 2. Set-up other PC or laptop
 
 To backup your other files from your other Computers, you can install tailscale as well
 
@@ -139,9 +139,9 @@ Authenticate and Login
 sudo tailscale up
 ```
 
- > ## You should be able to see every devices connected including your Main Server by visiting: [Tailscale](https://login.tailscale.com/admin/machines)
+**You should be able to see every devices connected including your Main Server by visiting: [Tailscale](https://login.tailscale.com/admin/machines)**
 
-### 7. Install Tailscale on Playstore
+### 3. Install Tailscale on Playstore
 
 1. Install Tailscale on Playstore
 2. Login with your preferred account
@@ -152,7 +152,23 @@ You should see:
 ``` bash
 ├── Main Server Name
 ├── Android Phone Name
+├── Laptop Name 
 ```
+
+## Nextcloud
+Put in your tailscale ip on your Main server
+``` bash
+http://100.XX.XXX.XXX:8080 # Your Local Port in docker-compose.yml
+```
+This should open nextcloud and ask you to login or make an account
+
+## Test
+On your other devices, try sending a file through nextcloud and see if it works
+1. On Android
+Download nextcloud in the playstore and login using the IP
+2. On Laptop or Another PC
+Put in your chosen browser the exact same ip and port used in your main server, this should ask you to login, put the same login credentials as your main server
 
 
 > TO BE CONTINUED
+> More to ADD !!
