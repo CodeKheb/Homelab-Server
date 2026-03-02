@@ -1,0 +1,13 @@
+
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: "host"
+    volumes:
+      - ~/media/Shows:/shows #change to whatever directory you want
+      - ~/media/Movies:/movies # :/show and :/movies will show up in  jellyfin path
+      - ./config:/config
+      - ./cache:/cache
+      - /mnt/media:/media
+    restart: unless-stopped
