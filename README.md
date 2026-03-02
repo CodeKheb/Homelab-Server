@@ -158,8 +158,10 @@ You should see:
 ## Nextcloud
 Put in your tailscale ip on your Main server
 ``` bash
-http://100.XX.XXX.XXX:8080 # Your Local Port in docker-compose.yml
+http://100.XX.XXX.XXX:8080 
 ```
+Change :8080 Your Local Port in docker-compose.yml
+
 This should open nextcloud and ask you to login or make an account
 
 ## Test
@@ -168,6 +170,38 @@ On your other devices, try sending a file through nextcloud and see if it works
 Download nextcloud in the playstore and login using the IP
 2. On Laptop or Another PC
 Put in your chosen browser the exact same ip and port used in your main server, this should ask you to login, put the same login credentials as your main server
+
+# JellyFin (Media Server)
+
+Added this also for our TV and to view downloaded media locally from the server in all connected devices
+
+## Setup
+### Edit this again
+``` bash
+cd ~/Homelab-Server/jellyfin
+```
+``` bash
+nano docker-compose.yml 
+```
+``` yaml
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: "host"
+    volumes:
+      - ~/media/Shows:/shows #change to whatever directory you want
+      - ~/media/Movies:/movies # :/show and :/movies will show up in  jellyfin path
+      - ./config:/config
+      - ./cache:/cache
+      - /mnt/media:/media
+    restart: unless-stopped
+```
+### Compose Docker
+``` bash
+docker compose up
+```
+> Will write a script for this soon, babes
 
 
 > TO BE CONTINUED
